@@ -5,6 +5,8 @@ It is often a tedious task to compare all the algorithms for a given dataset bec
 
 The data scientist should run all the algorithms, compare them with the help of metrics and finally choose a algorithms that suits the dataset. This package does all this automatically and gives you the comparision between algorithm in the terms of a specific metric and also time which is another big factor for choosing a algorithm.
 
+The package also help to give a basic run on a given dataset or to a Machine Learning enthusiast to start off with Machine Learning by offering cleaning of data and making it ready for training with model. Documentation on how cleaning is done is given below.
+
 The package goes hand in hand with the pandas package and sklearn package algorithms and metrics classes.
 
 Just give us the data in a pandas dataframe object along with the prediction column and sit back. 
@@ -88,3 +90,12 @@ Parameters
     - Defined Classification algorithms are:
            RandomForestClassifier, ExtraTreesClassifier, LogisticRegression, DecisionTreeClassifier, SGDClassifier, SVC, GradientBoostingClassifier, KNeighborsClassifier, GaussianNB, AdaBoostClassifier
 
+### Cleaning of the Data:
+-----------
+
+1. If the column is a numerical column:
+   * If continious : Filled the missing values with **mean** of the same column.
+   * If classified : Filled the missing values with **mode** of the same column.
+2. If the column is a character column:
+   * If continious : The column is dropped.
+   * If classified : Filled the missing values with **mode** of the same column. **Dummy** columns are added using the pandas **get_dummies** function.
